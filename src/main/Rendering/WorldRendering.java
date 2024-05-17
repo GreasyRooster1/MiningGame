@@ -1,5 +1,6 @@
 package main.Rendering;
 
+import main.Assets.AssetLoader;
 import main.Block;
 import main.Main;
 import main.World.Chunk;
@@ -20,7 +21,7 @@ public class WorldRendering {
         for (Block block:chunk.blocks) {
             Main.app.fill(127);
             Main.app.stroke(0);
-            Main.app.rect(chunkOffsetX+block.x*blockSize,chunkOffsetY+block.y*blockSize,blockSize,blockSize);
+            Main.app.image(AssetLoader.getAsset("block.grass"),chunkOffsetX+block.x*blockSize,chunkOffsetY+block.y*blockSize,blockSize,blockSize);
         }
 
         Main.app.noFill();

@@ -6,6 +6,8 @@ import main.World.Generator.WorldGenerator;
 import main.World.World;
 import processing.core.PApplet;
 
+import static main.Assets.AssetLoader.loadAssets;
+
 public class Main extends PApplet {
     public static PApplet app;
     public void settings() {
@@ -14,6 +16,7 @@ public class Main extends PApplet {
 
     public void setup(){
         app = this;
+        loadAssets();
         WorldGenerator.generateWorld();
     }
 
