@@ -2,6 +2,7 @@ package main;
 
 import main.Rendering.Renderer;
 import main.World.Chunk;
+import main.World.Generator.WorldGenerator;
 import main.World.World;
 import processing.core.PApplet;
 
@@ -13,6 +14,7 @@ public class Main extends PApplet {
 
     public void setup(){
         app = this;
+        WorldGenerator.generateWorld();
     }
 
     public void draw(){
