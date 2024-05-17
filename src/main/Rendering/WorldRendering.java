@@ -8,15 +8,22 @@ import main.World.World;
 
 public class WorldRendering {
     public static float blockSize = 30;
+    public static float chunkSize = blockSize*16;
     public static void renderWorld(){
-        for(Chunk chunk : World.chunks){
+        for(Chunk chunk : World.chunks) {
+//            if(chunk.chunkX*chunkSize>Main.app.width||
+//                chunk.chunkX*chunkSize+chunkSize<Main.app.width||
+//                chunk.chunkY*chunkSize>Main.app.height||
+//                chunk.chunkY*chunkSize+chunkSize<Main.app.height){
+//                    continue;
+//            }
             renderChunk(chunk);
         }
     }
 
     public static void renderChunk(Chunk chunk){
-        float chunkOffsetX = chunk.chunkX*(blockSize*16);
-        float chunkOffsetY = chunk.chunkY*(blockSize*16);
+        float chunkOffsetX = chunk.chunkX*chunkSize;
+        float chunkOffsetY = chunk.chunkY*chunkSize;
 
         for (Block block:chunk.blocks) {
             Main.app.fill(127);
@@ -26,6 +33,6 @@ public class WorldRendering {
 
         Main.app.noFill();
         Main.app.stroke(0,0,255);
-        Main.app.rect(chunkOffsetX,chunkOffsetY,blockSize*16,blockSize*16);
+        Main.app.rect(chunkOffsetX,chunkOffsetY,chunkSize,chunkSize);
     }
 }
