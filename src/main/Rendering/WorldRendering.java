@@ -1,7 +1,7 @@
 package main.Rendering;
 
 import main.Assets.AssetLoader;
-import main.Block;
+import main.Block.Block;
 import main.Main;
 import main.World.Chunk;
 import main.World.World;

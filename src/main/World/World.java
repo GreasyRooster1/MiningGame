@@ -1,7 +1,5 @@
 package main.World;
 
-import main.Block;
-
 import java.util.ArrayList;
 
 public class World {

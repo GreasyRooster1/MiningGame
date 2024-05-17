@@ -1,6 +1,6 @@
 package main.World.Generator;
 
-import main.Block;
+import main.Block.Block;
 import main.World.Chunk;
 import main.World.World;
 
