@@ -13,10 +13,10 @@ public class WorldRendering {
         }
     }
 
-    public static void renderChunk(Chunk chunk,int chunkX,int chunkY){
+    public static void renderChunk(Chunk chunk){
         for (Block block:chunk.blocks) {
-            float chunkOffsetX = chunkX*(blockSize*16);
-            float chunkOffsetY = chunkY*(blockSize*16);
+            float chunkOffsetX = chunk.chunkX*(blockSize*16);
+            float chunkOffsetY = chunk.chunkY*(blockSize*16);
             Main.app.rect(chunkOffsetX+block.x,chunkOffsetY+block.y,blockSize,blockSize);
         }
     }
