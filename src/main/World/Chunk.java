@@ -2,8 +2,10 @@ package main.World;
 
 import main.Block;
 
+import java.util.ArrayList;
+
 public class Chunk {
-    public Block[] blocks = {};
+    public ArrayList<Block> blocks = new ArrayList<>();
     public int chunkX,chunkY;
     public Chunk(int x,int y){
         chunkX = x;

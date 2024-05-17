@@ -1,6 +1,7 @@
 package main;
 
 import main.Rendering.Renderer;
+import main.World.Chunk;
 import main.World.World;
 import processing.core.PApplet;
 
