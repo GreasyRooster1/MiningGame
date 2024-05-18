@@ -1,7 +1,14 @@
 package main.Util;
 
+import main.Block.Block;
+import main.Player.Player;
+import main.World.Chunk;
+
+import static main.Rendering.WorldRendering.blockSize;
+import static main.Rendering.WorldRendering.chunkSize;
+
 public class Collision {
-    boolean rectRect(float r1x, float r1y, float r1w, float r1h, float r2x, float r2y, float r2w, float r2h) {
+    public static boolean rectRect(float r1x, float r1y, float r1w, float r1h, float r2x, float r2y, float r2w, float r2h) {
 
         // are the sides of one rectangle touching the other?
 
@@ -10,5 +17,9 @@ public class Collision {
                 r1x <= r2x + r2w &&    // r1 left edge past r2 right
                 r1y + r1h >= r2y &&    // r1 top edge past r2 bottom
                 r1y <= r2y + r2h;
+    }
+
+    public static boolean blockRect(Chunk chunk, Block b,float r2x, float r2y, float r2w, float r2h){
+        return rectRect(b.x*blockSize+ chunk.chunkX*chunkSize,b.y*blockSize+ chunk.chunkY*chunkSize,blockSize,blockSize, r2x, r2y, r2w, r2h);
     }
 }
