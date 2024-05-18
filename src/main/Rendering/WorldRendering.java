@@ -26,9 +26,7 @@ public class WorldRendering {
         float chunkOffsetY = chunk.chunkY*chunkSize;
 
         for (Block block:chunk.blocks) {
-            Main.app.fill(127);
-            Main.app.stroke(0);
-            Main.app.image(AssetLoader.getAsset("block.grass"),chunkOffsetX+block.x*blockSize,chunkOffsetY+block.y*blockSize,blockSize,blockSize);
+            Main.app.image(block.texture,chunkOffsetX+block.x*blockSize,chunkOffsetY+block.y*blockSize,blockSize,blockSize);
         }
 
         Main.app.noFill();
