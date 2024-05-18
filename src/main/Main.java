@@ -1,5 +1,6 @@
 package main;
 
+import main.Input.KeyHandler;
 import main.Player.Player;
 import main.Rendering.Renderer;
 import main.World.Chunk;
@@ -17,8 +18,6 @@ public class Main extends PApplet {
     public static Main app;
 
     public static Player player;
-
-    public static ArrayList<Boolean> keysDown = new ArrayList<Boolean>(Collections.nCopies(256,false));
 
     public void settings() {
         size(500, 500);
@@ -44,17 +43,11 @@ public class Main extends PApplet {
         PApplet.main(appletArgs);
     }
 
-    public void keyPressed(){
-        if(keyCode>256){
-            return;
-        }
-        keysDown.set(keyCode, true);
+    public void keyPressed() {
+        KeyHandler.keyPressedEvent();
     }
 
-    public void keyReleased(){
-        if(keyCode>256){
-            return;
-        }
-        keysDown.set(keyCode, false);
+    public void keyReleased() {
+        KeyHandler.keyReleasedEvent();
     }
 }

@@ -4,6 +4,7 @@ import main.Main;
 
 import static java.awt.event.KeyEvent.VK_A;
 import static java.awt.event.KeyEvent.VK_D;
+import static main.Input.KeyHandler.keysDown;
 
 public class Player {
     public float x,y;
@@ -14,10 +15,10 @@ public class Player {
     }
 
     public void update(){
-        if(Main.keysDown.get(VK_A)){
+        if(keysDown.get(VK_A)){
             x-=2;
         }
-        if(Main.keysDown.get(VK_D)){
+        if(keysDown.get(VK_D)){
             x+=2;
         }
     }
