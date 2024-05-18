@@ -11,6 +11,6 @@ public class Asset {
     public Asset(String _id,String path){
         id = _id;
         println(System.getProperty("user.dir")+"\\"+path);
-        image = Main.app.loadImage(System.getProperty("user.dir")+"\\"+path);
+        image = Main.app.loadImage(System.getProperty("user.dir")+"\\assets\\"+path);
     }
 }
