@@ -16,6 +16,8 @@ public class Player {
     public float x,y;
     public float xvel,yvel;
 
+    public boolean onGround = false;
+
     public Player(float _x,float _y){
         x = _x;
         y = _y;
@@ -37,7 +39,11 @@ public class Player {
     }
 
     public void doVelocity(){
-        xvel*=1-airFriction;
+        if(!onGround) {
+            xvel *= 1 - airFriction;
+        }else{
+            xvel *= 1 - groundFriction;
+        }
 
         if(!willCollide(xvel,0)) {
             x += xvel;
@@ -46,8 +52,10 @@ public class Player {
         }
         if(!willCollide(0,yvel)) {
             y += yvel;
+            onGround = false;
         }else{
             yvel=0;
+            onGround = true;
         }
     }
 
