@@ -43,9 +43,13 @@ public class Player {
 
         if(!checkCollision(xvel,0)) {
             x += xvel;
+        }else{
+            xvel=0;
         }
         if(!checkCollision(0,yvel)) {
             y += yvel;
+        }else{
+            yvel=0;
         }
     }
 
