@@ -7,12 +7,18 @@ import main.World.Generator.WorldGenerator;
 import main.World.World;
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 import static main.Assets.AssetLoader.loadAssets;
 
 public class Main extends PApplet {
-    public static PApplet app;
+    public static Main app;
 
     public static Player player;
+
+    public static ArrayList<Boolean> keysDown = new ArrayList<Boolean>(Collections.nCopies(256,false));
 
     public void settings() {
         size(500, 500);
@@ -29,11 +35,26 @@ public class Main extends PApplet {
 
     public void draw(){
         background(64);
+        player.update();
         Renderer.renderView();
     }
 
     public static void main(String[] passedArgs) {
         String[] appletArgs = new String[] { "main.Main" };
         PApplet.main(appletArgs);
+    }
+
+    public void keyPressed(){
+        if(keyCode>256){
+            return;
+        }
+        keysDown.set(keyCode, true);
+    }
+
+    public void keyReleased(){
+        if(keyCode>256){
+            return;
+        }
+        keysDown.set(keyCode, false);
     }
 }
