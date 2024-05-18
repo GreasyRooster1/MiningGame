@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class KeyHandler {
-    public static ArrayList<Boolean> keysDown = new ArrayList<Boolean>(Collections.nCopies(256,false));
+    public static ArrayList<Boolean> keysDown = new ArrayList<>(Collections.nCopies(256, false));
 
     public static void keyPressedEvent(){
         if(Main.app.keyCode>256){

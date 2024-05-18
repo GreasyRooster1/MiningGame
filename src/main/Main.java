@@ -34,7 +34,9 @@ public class Main extends PApplet {
 
     public void draw(){
         background(64);
+
         player.update();
+
         Renderer.renderView();
     }
 

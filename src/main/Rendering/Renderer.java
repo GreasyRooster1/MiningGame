@@ -10,7 +10,7 @@ import static main.Rendering.WorldRendering.renderWorld;
 public class Renderer {
     public static void renderView(){
         Main.app.pushMatrix();
-        Main.app.translate(-Main.player.x + (float) Main.app.width /2, -Main.player.y + (float) Main.app.height /2);
+        Main.app.translate(-(Main.player.x - (float) Main.app.width /2), -(Main.player.y - (float) Main.app.height /2));
 
         renderWorld();
         renderPlayer();
