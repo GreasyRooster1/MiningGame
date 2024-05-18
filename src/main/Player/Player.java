@@ -1,12 +1,10 @@
 package main.Player;
 
 import main.Block.Block;
-import main.Main;
 import main.World.Chunk;
 import main.World.World;
 
-import static java.awt.event.KeyEvent.VK_A;
-import static java.awt.event.KeyEvent.VK_D;
+import static java.awt.event.KeyEvent.*;
 import static java.lang.Math.abs;
 import static main.Input.KeyHandler.keysDown;
 import static main.Player.PlayerPhysicsConstants.*;
@@ -41,12 +39,12 @@ public class Player {
     public void doVelocity(){
         xvel*=1-airFriction;
 
-        if(!checkCollision(xvel,0)) {
+        if(!willCollide(xvel,0)) {
             x += xvel;
         }else{
             xvel=0;
         }
-        if(!checkCollision(0,yvel)) {
+        if(!willCollide(0,yvel)) {
             y += yvel;
         }else{
             yvel=0;
@@ -60,15 +58,18 @@ public class Player {
         if(keysDown.get(VK_D)&&xvel<maxMoveVelocity){
             xvel+=moveVelocity;
         }
+        if(keysDown.get(VK_SPACE)){
+            yvel+=jumpVelocity;
+        }
     }
 
-    public boolean checkCollision(float dx, float dy){
+    public boolean willCollide(float dx, float dy){
         Chunk currentChunk = getCurrentChunk();
         if(currentChunk==null){
             return false;
         }
         for(Block block:currentChunk.blocks){
-            if(blockRect(currentChunk,block,x+dx,y+dy,blockSize*2,blockSize*2)){
+            if(blockRect(currentChunk,block,x+dx-blockSize,y+dy-blockSize,blockSize*2,blockSize*2)){
                 return true;
             }
         }
