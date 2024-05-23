@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import static core.QLogr.*;
+import static qlogr.QLogr.*;
 
 public class AssetLoader {
     public static ArrayList<Asset> assets = new ArrayList<>();

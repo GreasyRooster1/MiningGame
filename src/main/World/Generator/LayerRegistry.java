@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import main.World.Generator.Layers.*;
 
-import static core.QLogr.info;
+import static qlogr.QLogr.*;
 
 public class LayerRegistry {
 

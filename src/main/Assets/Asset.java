@@ -4,7 +4,7 @@ import main.Main;
 import processing.core.PImage;
 
 import static processing.core.PApplet.println;
-import static core.QLogr.*;
+import static qlogr.QLogr.*;
 
 public class Asset {
     public String id;

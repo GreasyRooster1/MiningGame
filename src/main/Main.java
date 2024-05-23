@@ -1,6 +1,5 @@
 package main;
 
-import core.QLogr;
 import main.Input.KeyHandler;
 import main.Player.Player;
 import main.Rendering.Renderer;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-import static core.QLogr.*;
+import static qlogr.QLogr.*;
 import static main.Assets.AssetLoader.loadAssets;
 
 public class Main extends PApplet {

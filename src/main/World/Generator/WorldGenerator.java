@@ -4,7 +4,7 @@ import main.Block.Block;
 import main.Block.Types.*;
 import main.World.Chunk;
 import main.World.World;
-import static core.QLogr.*;
+import static qlogr.QLogr.*;
 
 public class WorldGenerator {
     public static int startAreaWidth=32;
