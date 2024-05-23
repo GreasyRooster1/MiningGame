@@ -17,6 +17,8 @@ public class AssetLoader {
     public static void loadBlocks(){
         assets.add(new Asset("block.grass","block\\grass.png"));
         assets.add(new Asset("block.stone","block\\stone.png"));
+        assets.add(new Asset("block.stone","block\\slate.png"));
+        assets.add(new Asset("block.stone","block\\limestone.png"));
     }
 
     public static PImage getAsset(String id){
