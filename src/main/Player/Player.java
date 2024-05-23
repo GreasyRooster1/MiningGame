@@ -86,7 +86,7 @@ public class Player {
 
     public Chunk getCurrentChunk(){
         for (Chunk chunk:World.chunks){
-            if(x>chunk.chunkX*chunkSize&&x<(chunk.chunkX+1)*chunkSize&&y>chunk.chunkY*chunkSize&&y<(chunk.chunkY+1)*chunkSize){
+            if(x>=chunk.chunkX*chunkSize&&x<(chunk.chunkX+1)*chunkSize&&y>=chunk.chunkY*chunkSize&&y<(chunk.chunkY+1)*chunkSize){
                 return chunk;
             }
         }
