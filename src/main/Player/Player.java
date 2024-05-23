@@ -17,6 +17,7 @@ public class Player {
     public float xvel,yvel;
 
     public boolean onGround = false;
+    public boolean moving = false;
 
     public Player(float _x,float _y){
         x = _x;
@@ -42,7 +43,9 @@ public class Player {
         if(!onGround) {
             xvel *= 1 - airFriction;
         }else{
-            xvel *= 1 - groundFriction;
+            if(!moving) {
+                xvel *= 1 - groundFriction;
+            }
         }
 
         if(!willCollide(xvel,0)) {
@@ -60,13 +63,16 @@ public class Player {
     }
 
     public void getInput(){
+        moving=false;
         if(keysDown.get(VK_A)&&xvel>-maxMoveVelocity){
             xvel-=moveVelocity;
+            moving=true;
         }
         if(keysDown.get(VK_D)&&xvel<maxMoveVelocity){
             xvel+=moveVelocity;
+            moving=true;
         }
-        if(keysDown.get(VK_SPACE)){
+        if(keysDown.get(VK_SPACE)&&onGround){
             yvel+=jumpVelocity;
         }
     }

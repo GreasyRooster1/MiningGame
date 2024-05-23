@@ -7,7 +7,7 @@ public class PlayerPhysicsConstants {
     public static float terminalVelocity = 17f;
 
     public static float moveVelocity = 0.2f;
-    public static float jumpVelocity = -2f;
+    public static float jumpVelocity = -8f;
 
     public static float airFriction = 0.03f;
     public static float groundFriction = 0.06f;
