@@ -4,13 +4,20 @@ import main.Block.Block;
 import main.Block.Types.*;
 import main.World.Chunk;
 import main.World.World;
+import static core.QLogr.*;
 
 public class WorldGenerator {
+    public static int startAreaWidth=32;
+    public static int startAreaHeight=32;
 
     public static void generateWorld(){
-        for (int i = -16; i < 16; i++) {
-            for (int j = 0; j < 32; j++) {
+        info("generating world ("+startAreaWidth+"x"+startAreaHeight+")");
+        int c =0;
+        for (int i = -startAreaWidth/2; i < startAreaWidth/2; i++) {
+            for (int j = 0; j < startAreaHeight; j++) {
                 generateChunk(i,j);
+                c++;
+                logProgress(i,j,c);
             }
         }
     }
@@ -35,5 +42,13 @@ public class WorldGenerator {
             }
         }
         return null;
+    }
+
+    public static void logProgress(float cx, float cy,int count){
+        if(count%10!=0&&count!=startAreaWidth*startAreaHeight){
+            return;
+        }
+        float percent = (float) count /(startAreaWidth*startAreaHeight)*100;
+        info("generating world: "+percent+"% x:"+cx+" y:"+cy);
     }
 }

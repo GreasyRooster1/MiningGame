@@ -1,5 +1,6 @@
 package main;
 
+import core.QLogr;
 import main.Input.KeyHandler;
 import main.Player.Player;
 import main.Rendering.Renderer;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
+import static core.QLogr.*;
 import static main.Assets.AssetLoader.loadAssets;
 
 public class Main extends PApplet {
@@ -26,6 +28,7 @@ public class Main extends PApplet {
 
     public void setup(){
         app = this;
+        info("Starting game");
 
         player = new Player(0,0);
 

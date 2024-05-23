@@ -6,10 +6,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static core.QLogr.*;
+
 public class AssetLoader {
     public static ArrayList<Asset> assets = new ArrayList<>();
 
     public static void loadAssets(){
+        info("Loading assets");
+
         loadBlocks();
 
         assets.add(new Asset("player.idle","player\\idle.png"));
