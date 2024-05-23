@@ -2,7 +2,7 @@ package main.World.Generator;
 
 import java.util.ArrayList;
 
-import main.World.Generator.Layers.DirtLayer;
+import main.World.Generator.Layers.*;
 
 public class LayerRegistry {
 
@@ -10,6 +10,7 @@ public class LayerRegistry {
 
     public static void registerLayers(){
         registerLayer(new DirtLayer());
+        registerLayer(new StoneLayer());
     }
     public static void registerLayer(GenerationLayer layer){
         registry.add(layer);

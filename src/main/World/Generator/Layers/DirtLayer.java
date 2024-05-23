@@ -7,7 +7,7 @@ import main.World.Generator.GenerationLayer;
 public class DirtLayer extends GenerationLayer {
     public DirtLayer() {
         startDepth=8;
-        endDepth=32;
+        endDepth=16;
     }
 
     @Override
