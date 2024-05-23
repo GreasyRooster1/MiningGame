@@ -2,6 +2,7 @@ package main.World.Generator.Layers;
 
 import main.Block.Block;
 import main.Block.Types.GrassBlock;
+import main.Block.Types.StoneBlock;
 import main.World.Generator.GenerationLayer;
 
 public class StoneLayer extends GenerationLayer {
@@ -12,6 +13,6 @@ public class StoneLayer extends GenerationLayer {
 
     @Override
     public Block generateBlock(int blockX, int blockY, int placeX, int placeY) {
-        return new GrassBlock(placeX,placeY);
+        return new StoneBlock(placeX,placeY);
     }
 }

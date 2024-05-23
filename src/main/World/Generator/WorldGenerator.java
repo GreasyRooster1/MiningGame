@@ -29,7 +29,7 @@ public class WorldGenerator {
 
     public static Block generateBlock(int blockX, int blockY, Chunk chunk){
         for (GenerationLayer layer:LayerRegistry.registry){
-            Block b = layer.generateSelf(blockX+chunk.chunkX,blockY+chunk.chunkY,blockX,blockY);
+            Block b = layer.generateSelf(blockX+chunk.chunkX*16,blockY+chunk.chunkY*16,blockX,blockY);
             if(b!=null) {
                 return b;
             }

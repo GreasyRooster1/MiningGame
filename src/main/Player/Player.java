@@ -19,6 +19,8 @@ public class Player {
     public boolean onGround = false;
     public boolean moving = false;
 
+    public boolean noClip = false;
+
     public Player(float _x,float _y){
         x = _x;
         y = _y;
@@ -75,10 +77,20 @@ public class Player {
         if(keysDown.get(VK_SPACE)&&onGround){
             yvel+=jumpVelocity;
         }
+
+        if(keysDown.get(VK_1)){
+            noClip=true;
+        }
+        if(keysDown.get(VK_2)){
+            noClip=false;
+        }
     }
 
     public boolean willCollide(float dx, float dy){
         Chunk currentChunk = getCurrentChunk();
+        if(noClip){
+            return false;
+        }
         if(currentChunk==null){
             return false;
         }

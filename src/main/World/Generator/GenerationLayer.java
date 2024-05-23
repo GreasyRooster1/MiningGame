@@ -7,7 +7,7 @@ public class GenerationLayer {
     public int endDepth=0;
 
     public Block generateSelf(int blockX,int blockY,int placeX,int placeY){
-        if(blockY>startDepth&&blockY<endDepth){
+        if(blockY>=startDepth&&blockY<endDepth){
             return generateBlock(blockX,blockY,placeX,placeY);
         }
         return null;
