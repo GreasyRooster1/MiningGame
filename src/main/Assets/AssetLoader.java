@@ -2,6 +2,7 @@ package main.Assets;
 
 import processing.core.PImage;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -15,10 +16,12 @@ public class AssetLoader {
     }
 
     public static void loadBlocks(){
-        assets.add(new Asset("block.grass","block\\grass.png"));
-        assets.add(new Asset("block.stone","block\\stone.png"));
-        assets.add(new Asset("block.stone","block\\slate.png"));
-        assets.add(new Asset("block.stone","block\\limestone.png"));
+        File directoryPath = new File("assets\\block");
+        String[] contents = directoryPath.list();
+        for(String filename:contents){
+            String name = filename.replace(".png","");
+            assets.add(new Asset("block."+name,"block\\"+filename));
+        }
     }
 
     public static PImage getAsset(String id){
