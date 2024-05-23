@@ -29,7 +29,7 @@ public class Main extends PApplet {
         player = new Player(0,0);
 
         loadAssets();
-        WorldGenerator.generateWorld();
+        World.generateWorld();
     }
 
     public void draw(){
