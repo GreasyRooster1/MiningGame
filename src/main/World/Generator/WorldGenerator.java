@@ -28,11 +28,11 @@ public class WorldGenerator {
     }
 
     public static Block generateBlock(int blockX, int blockY, Chunk chunk){
-        if(blockY>10){
-            return new GrassBlock(blockX,blockY);
-        }
-        if(blockY>8){
-            return new StoneBlock(blockX,blockY);
+        for (GenerationLayer layer:LayerRegistry.registry){
+            Block b = layer.generateSelf(blockX+chunk.chunkX,blockY+chunk.chunkY,blockX,blockY);
+            if(b!=null) {
+                return b;
+            }
         }
         return null;
     }
