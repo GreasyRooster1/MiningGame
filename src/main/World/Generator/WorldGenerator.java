@@ -26,9 +26,7 @@ public class WorldGenerator {
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
                 Block block = WorldGenerator.generateBlock(i,j,chunk);
-                if(block!=null) {
-                    chunk.add(block);
-                }
+                chunk.add(block);
             }
         }
         World.chunks.add(chunk);
@@ -36,7 +34,7 @@ public class WorldGenerator {
 
     public static Block generateBlock(int blockX, int blockY, Chunk chunk){
         for (GenerationLayer layer:LayerRegistry.registry){
-            Block b = layer.generateSelf(blockX+chunk.chunkX*16,blockY+chunk.chunkY*16,blockX,blockY);
+            Block b = layer.checkLayerBoundsAndGenerate(blockX+chunk.chunkX*16,blockY+chunk.chunkY*16,blockX,blockY);
             if(b!=null) {
                 return b;
             }

@@ -12,8 +12,9 @@ public class LayerRegistry {
 
     public static void registerLayers(){
         info("registering layers");
-        registerLayer(new DirtLayer());
+
         registerLayer(new StoneLayer());
+        registerLayer(new DirtLayer());
     }
     public static void registerLayer(GenerationLayer layer){
         registry.add(layer);
