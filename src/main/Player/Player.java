@@ -30,8 +30,13 @@ public class Player {
 
     public void update(){
         getInput();
-        doGravity();
-        doVelocity();
+        if(noClip){
+            noClipMovement();
+        }else {
+            doGravity();
+            doVelocity();
+        }
+
     }
 
     public void doGravity(){
@@ -103,6 +108,28 @@ public class Player {
             }
         }
         return false;
+    }
+
+    public void noClipMovement(){
+        if(keysDown.get(VK_A)){
+            x-=noClipSpeed;
+        }
+        if(keysDown.get(VK_D)){
+            x+=noClipSpeed;
+        }
+        if((keysDown.get(VK_SPACE)||keysDown.get(VK_W))){
+            y-=noClipSpeed;
+        }
+        if(keysDown.get(VK_S)){
+            y+=noClipSpeed;
+        }
+
+        if(keysDown.get(VK_1)){
+            noClip=true;
+        }
+        if(keysDown.get(VK_2)){
+            noClip=false;
+        }
     }
 
     public Chunk getCurrentChunk(){

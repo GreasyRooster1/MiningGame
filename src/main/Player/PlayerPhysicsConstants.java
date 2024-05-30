@@ -11,4 +11,6 @@ public class PlayerPhysicsConstants {
 
     public static float airFriction = 0.03f;
     public static float groundFriction = 0.06f;
+
+    public static float noClipSpeed = 5f;
 }
