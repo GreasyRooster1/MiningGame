@@ -13,7 +13,11 @@ public class DirtLayer extends GenerationLayer {
     }
 
     @Override
-    public Block generateBlock(int blockX, int blockY, int placeX, int placeY) {
-        return new GrassBlock(placeX,placeY);
+    public Block generateBlock(int blockX, int blockY,int blockDepth) {
+        if(blockDepth==0) {
+            return new GrassBlock(0, 0);
+        }else{
+            return new DirtBlock(0, 0);
+        }
     }
 }

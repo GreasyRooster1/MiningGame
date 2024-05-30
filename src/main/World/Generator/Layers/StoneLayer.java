@@ -14,7 +14,7 @@ public class StoneLayer extends GenerationLayer {
     }
 
     @Override
-    public Block generateBlock(int blockX, int blockY, int placeX, int placeY) {
-        return new StoneBlock(placeX,placeY);
+    public Block generateBlock(int blockX, int blockY,int blockDepth) {
+        return new StoneBlock(0,0);
     }
 }

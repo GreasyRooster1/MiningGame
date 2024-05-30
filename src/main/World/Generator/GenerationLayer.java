@@ -13,13 +13,17 @@ public class GenerationLayer {
 
     public Block checkLayerBoundsAndGenerate(int blockX, int blockY, int placeX, int placeY){
         int yShift = round(app.noise(blockX*noiseScale,startDepth)*noiseAmount);
-        if(blockY>=startDepth-yShift&&blockY<endDepth){
-            return generateBlock(blockX,blockY,placeX,placeY);
+        int adjustedStartDepth = startDepth-yShift;
+        if(blockY>=adjustedStartDepth&&blockY<endDepth){
+            Block b = generateBlock(blockX,blockY,placeY-adjustedStartDepth);
+            b.x = placeX;
+            b.y = placeY;
+            return b;
         }
         return null;
     }
 
-    public Block generateBlock(int blockX, int blockY, int placeX, int placeY) {
+    public Block generateBlock(int blockX, int blockY,int blockDepth) {
         return null;
     }
 }
