@@ -8,6 +8,8 @@ public class DirtLayer extends GenerationLayer {
     public DirtLayer() {
         startDepth=8;
         endDepth=16;
+        noiseScale=0.04f;
+        noiseAmount=5;
     }
 
     @Override
