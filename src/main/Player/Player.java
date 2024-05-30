@@ -95,6 +95,9 @@ public class Player {
             return false;
         }
         for(Block block:currentChunk.blocks){
+            if(!block.collides){
+                continue;
+            }
             if(blockRect(currentChunk,block,x+dx-blockSize,y+dy-blockSize,blockSize*2,blockSize*2)){
                 return true;
             }

@@ -27,7 +27,7 @@ public class WorldGenerator {
             for (int j = 0; j < 16; j++) {
                 Block block = WorldGenerator.generateBlock(i,j,chunk);
                 if(block!=null) {
-                    chunk.blocks.add(block);
+                    chunk.add(block);
                 }
             }
         }
@@ -41,7 +41,7 @@ public class WorldGenerator {
                 return b;
             }
         }
-        return null;
+        return new AirBlock(blockX,blockY);
     }
 
     public static void logProgress(float cx, float cy,int count){

@@ -26,7 +26,9 @@ public class WorldRendering {
         float chunkOffsetY = chunk.chunkY*chunkSize;
 
         for (Block block:chunk.blocks) {
-            Main.app.image(block.texture,chunkOffsetX+block.x*blockSize,chunkOffsetY+block.y*blockSize,blockSize,blockSize);
+            if(block.visible) {
+                Main.app.image(block.texture, chunkOffsetX + block.x * blockSize, chunkOffsetY + block.y * blockSize, blockSize, blockSize);
+            }
         }
 
         Main.app.noFill();
