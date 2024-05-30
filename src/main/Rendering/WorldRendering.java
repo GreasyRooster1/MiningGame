@@ -11,12 +11,6 @@ public class WorldRendering {
     public static float chunkSize = blockSize*16;
     public static void renderWorld(){
         for(Chunk chunk : World.chunks) {
-//            if(chunk.chunkX*chunkSize>Main.app.width||
-//                chunk.chunkX*chunkSize+chunkSize<Main.app.width||
-//                chunk.chunkY*chunkSize>Main.app.height||
-//                chunk.chunkY*chunkSize+chunkSize<Main.app.height){
-//                    continue;
-//            }
             renderChunk(chunk);
         }
     }

@@ -7,6 +7,8 @@ import main.Block.Types.StoneBlock;
 import main.World.Generator.GenerationLayer;
 
 import static main.Main.app;
+import static main.Util.Rand.noise;
+import static main.Util.Rand.worldRand;
 
 public class StoneLayer extends GenerationLayer {
     public StoneLayer() {
@@ -19,7 +21,7 @@ public class StoneLayer extends GenerationLayer {
     @Override
     public Block generateBlock(int blockX, int blockY,int blockDepth) {
 
-        if(app.noise(blockX*0.08f,blockY*0.64f)>.5){
+        if(noise(blockX,blockY,0.08f,0.64f)<.3&&worldRand(blockX,blockY)<0.9){
             return new SlateBlock(0,0);
         }
 
