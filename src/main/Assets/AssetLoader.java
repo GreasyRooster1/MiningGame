@@ -16,15 +16,15 @@ public class AssetLoader {
 
         loadBlocks();
 
-        assets.add(new Asset("player.idle","player\\idle.png"));
+        assets.add(new Asset("player.idle","player/idle.png"));
     }
 
     public static void loadBlocks(){
-        File directoryPath = new File("assets\\block");
+        File directoryPath = new File("assets/block");
         String[] contents = directoryPath.list();
         for(String filename:contents){
             String name = filename.replace(".png","");
-            assets.add(new Asset("block."+name,"block\\"+filename));
+            assets.add(new Asset("block."+name,"block/"+filename));
         }
     }
 

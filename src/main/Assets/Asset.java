@@ -11,7 +11,7 @@ public class Asset {
     public PImage image;
     public Asset(String _id,String path){
         id = _id;
-        info("loaded "+System.getProperty("user.dir")+"\\"+path);
-        image = Main.app.loadImage(System.getProperty("user.dir")+"\\assets\\"+path);
+        info("loaded "+System.getProperty("user.dir")+"/"+path);
+        image = Main.app.loadImage(System.getProperty("user.dir")+"/assets/"+path);
     }
 }
